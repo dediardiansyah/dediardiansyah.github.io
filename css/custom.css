@@ -29,3 +29,20 @@
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
 }
+
+ul.list-skill{
+   list-style: none;
+   padding: 0px;
+}
+
+.list-skill>li{
+    text-align: center;
+    font-size: 50px;
+    margin-right:50px;
+    display: inline-block;
+}
+
+.list-skill>li>span{
+ display: block;
+ font-size: 14px;
+}
