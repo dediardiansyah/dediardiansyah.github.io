@@ -1,0 +1,104 @@
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 50%;
+
+    --card: 0 0% 3%;
+    --card-foreground: 120 100% 50%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 120 100% 50%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 120 100% 50%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 120 100% 40%;
+
+    --accent: 120 100% 30%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 120 100% 30%;
+    --input: 120 100% 30%;
+    --ring: 120 100% 50%;
+
+    --radius: 0;
+
+    --sidebar-background: 0 0% 0%;
+    --sidebar-foreground: 120 100% 50%;
+    --sidebar-primary: 120 100% 50%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 10%;
+    --sidebar-accent-foreground: 120 100% 50%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 120 100% 50%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-terminal text-neon font-mono;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ::selection {
+    @apply bg-neon text-terminal;
+  }
+
+  /* Terminal-style scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-terminal;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon;
+  }
+
+  .terminal-section {
+    @apply opacity-0;
+  }
+
+  .cursor {
+    @apply inline-block w-2 h-4 bg-neon animate-blink;
+    margin-left: 2px;
+  }
+}
+
+@layer components {
+  .terminal-pre {
+    @apply font-mono text-neon p-0 m-0 whitespace-pre-wrap break-words;
+  }
+
+  .terminal-link {
+    @apply text-neon relative inline-block hover:text-white transition-colors duration-300;
+  }
+
+  .terminal-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-full h-0.5 bg-neon scale-x-0 origin-bottom-right transition-transform duration-300;
+  }
+
+  .terminal-link:hover::after {
+    @apply scale-x-100 origin-bottom-left;
+  }
+}
