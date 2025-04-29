@@ -59,10 +59,10 @@ const Navigation: React.FC = () => {
       <div className="container mx-auto px-4 py-3 flex flex-col md:flex-row items-center justify-between">
         <div
           ref={nameRef}
-          className="text-lg md:text-xl font-bold text-neon mb-2 md:mb-0"
+          className="text-lg md:text-xl font-bold text-neon mb-4 md:mb-0"
         ></div>
 
-        <nav ref={navRef} className="flex gap-4 md:gap-6">
+        <nav ref={navRef} className="flex gap-3 md:gap-6 flex-wrap">
           {navItems.map((item, index) => (
             <button
               key={index}
